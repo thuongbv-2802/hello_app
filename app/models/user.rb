@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    # đảm bảo micropost bị xóa cùng ng dùng
+    has_many :microposts, dependent: :destroy
     attr_accessor :remember_token,  :activation_token,  :reset_token
     before_save   :downcase_email
     before_create :create_activation_digest
@@ -65,6 +67,13 @@ class User < ApplicationRecord
     # Sends password reset email.
     def send_password_reset_email
         UserMailer.password_reset(self).deliver
+    end
+
+    # Defines a proto-feed.
+    # See "Following users" for the full implementation.
+    def feed
+        # ? đảm bảo rằng id được thoát đúng cách trước khi được đưa vào truy vấn SQL cơ bản
+        Micropost.where("user_id = ?", id)
     end
 
     private

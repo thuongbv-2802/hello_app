@@ -28,7 +28,11 @@ gem 'faker', '~> 2.19.0'
 # paginate
 gem 'will_paginate', '~>  3.3.1'
 gem 'bootstrap-will_paginate', '~> 1.0.0'
-
+# User to add img
+gem 'carrierwave', '~> 2.2.2'
+gem 'mini_magick', '~> 4.11.0'
+gem 'fog', '~> 2.2.0'
+# gem 'rmagick', '~> 4.2.3'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
