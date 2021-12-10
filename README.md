@@ -1,4 +1,4 @@
 # README
 
-$ rails webpacker:install
-$ bundle install --without production
+>$ rails webpacker:install
+>$ bundle install --without production
