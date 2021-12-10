@@ -1,5 +1,5 @@
 # README
 
--$ rails webpacker:install 
+$ rails webpacker:install 
 
--$ bundle install --without production
+$ bundle install --without production
